@@ -26,7 +26,7 @@ test.describe('Check search by product name and adding it to cart', async functi
   for (const testData of existingProductNames) {
     test(
       `Positive case - ${testData.name}`,
-      { tag: '"@FinalProject01' },
+      { tag: '@FinalProject01' },
       async function ({ headerElements, searchResultsPage, quickViewBlock }) {
         await headerElements.searchByText(testData.name);
         await expect(searchResultsPage.locators.getBaseCardLocator(testData.name)).toBeVisible();
