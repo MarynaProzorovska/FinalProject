@@ -12,6 +12,10 @@ export class ProductPageLocators extends BaseLocator {
   readonly upButton: Locator = this.baseLocator.locator('.bootstrap-touchspin-up');
   readonly downButton: Locator = this.baseLocator.locator('.bootstrap-touchspin-down');
   readonly addToWishListButton: Locator = this.baseLocator.locator('.wishlist-button-add ');
+  readonly notLoggedInMessage: Locator = this.baseLocator.locator('.modal-text', {
+    hasText: 'You need to be logged in to save products in your wishlist.',
+  });
+  readonly sizeIndicator: Locator = this.baseLocator.locator('.size indicator');
   readonly clothesTitle: Locator = this.baseLocator.locator('.h1', { hasText: 'Clothes' });
   readonly accessoriesTitle: Locator = this.baseLocator.locator('.h1', { hasText: 'Accessories' });
   readonly artTitle: Locator = this.baseLocator.locator('.h1', { hasText: 'Art' });

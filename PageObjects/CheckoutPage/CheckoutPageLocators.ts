@@ -2,18 +2,23 @@ import type { Locator } from 'playwright/test';
 import { BaseLocator } from '../Base/BaseLocator.js';
 
 export class CheckoutPageLocators extends BaseLocator {
+  readonly firstSTepTitle: Locator = this.baseLocator.locator('.step-title', {
+    hasText: ' Personal Information ',
+  });
   readonly mrRadioButton: Locator = this.baseLocator.getByRole('radio', { name: ' Mr. ' });
   readonly mrsRadioButton: Locator = this.baseLocator.getByRole('radio', { name: ' Mrs. ' });
   readonly firstNameInput: Locator = this.baseLocator.locator('#field-firstname');
   readonly lastNameInput: Locator = this.baseLocator.locator('#field-lastname');
-  readonly emailInput: Locator = this.baseLocator.locator('#field-email');
+  readonly emailInput: Locator = this.baseLocator.locator('#field-email').nth(0);
+  readonly passwordInput: Locator = this.baseLocator.locator('#field-password').nth(0);
+  readonly birthdate: Locator = this.baseLocator.locator('#field-birthday');
 
   readonly companyNameInput: Locator = this.baseLocator.locator('#field-company');
   readonly addressInput: Locator = this.baseLocator.locator('#field-address1');
   readonly addressComplementInput: Locator = this.baseLocator.locator('#field-address2');
   readonly cityInput: Locator = this.baseLocator.locator('#field-city');
   readonly stateInput: Locator = this.baseLocator.locator('#field-id_state');
-  readonly postalCodeInput: Locator = this.baseLocator.locator('#field-postcode');
+  readonly ZipInput: Locator = this.baseLocator.locator('#field-postcode');
   readonly countryInput: Locator = this.baseLocator.locator('#field-id_country');
   readonly phoneInput: Locator = this.baseLocator.locator('#field-phone');
 
@@ -35,12 +40,15 @@ export class CheckoutPageLocators extends BaseLocator {
   readonly agreeTermsCheckbox: Locator = this.baseLocator.getByLabel(
     ' I agree to the terms and conditions and the privacy policy '
   );
+
+  readonly agreeTermsOfService: Locator = this.baseLocator.locator(
+    '[id="conditions_to_approve[terms-and-conditions]"]'
+  );
+
   readonly continueButton: Locator = this.baseLocator.getByRole('button', { name: 'Continue' });
 
   readonly placeOrderButton: Locator = this.baseLocator.getByRole('button', {
     name: ' Place order ',
   });
-  readonly confirmedOrder: Locator = this.baseLocator.locator('.card-title', {
-    hasText: 'Your order is confirmed ',
-  });
+  readonly confirmedOrder: Locator = this.baseLocator.getByText('Your order is confirmed');
 }

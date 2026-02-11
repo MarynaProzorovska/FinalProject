@@ -1,5 +1,6 @@
 import { test as base } from '@playwright/test';
 import { CartPage } from '../PageObjects/CartPage/CartPage.js';
+import { CheckoutPage } from '../PageObjects/CheckoutPage/CheckoutPage.js';
 import { ClothesPage } from '../PageObjects/ClothesPage/ClothesPage.js';
 import { Filters } from '../PageObjects/Filters/Filters.js';
 import { HeaderElements } from '../PageObjects/HeaderElements/HeaderElements.js';
@@ -16,6 +17,7 @@ type MyFixtures = {
   searchResultsPage: SearchResultsPage;
   productPage: ProductPage;
   successfulMessage: SuccessfulMessage;
+  checkoutPage: CheckoutPage;
   cartPage: CartPage;
   filters: Filters;
   clothesPage: ClothesPage;
@@ -66,6 +68,11 @@ export const test = base.extend<MyFixtures>({
   clothesPage: async ({ page }, use) => {
     const clothesPage = new ClothesPage(page);
     await use(clothesPage);
+  },
+
+  checkoutPage: async ({ page }, use) => {
+    const checkoutPage = new CheckoutPage(page);
+    await use(checkoutPage);
   },
 
   before: [

@@ -28,6 +28,11 @@ export class CartPage extends BasePage {
     }
   }
 
+  async inputNewProductCount(productCount: string) {
+    await this.locators.productQuantityInput.fill(productCount);
+    await this.page.keyboard.press('Enter');
+  }
+
   async deleteProduct(productName: string) {
     await this.locators.getBaseCartItemLocator(productName).locator('.remove-from-cart').click();
   }

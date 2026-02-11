@@ -12,7 +12,10 @@ export class SuccessfulMessageLocators extends BaseLocator {
   readonly proceedToCheckoutButton: Locator = this.baseLocator.locator('.btn', {
     hasText: 'Proceed to checkout',
   });
-  readonly productQuantity: Locator = this.baseLocator.locator('.product-quantity');
+  readonly productQuantity: Locator = this.baseLocator
+    .locator('.product-quantity')
+    .getByText('Quantity:');
+  readonly productSize: Locator = this.baseLocator.locator('.size');
   readonly productPrice: Locator = this.baseLocator.locator('.product-price');
   readonly subtotalValue: Locator = this.baseLocator.locator('.subtotal');
   readonly modalBody: Locator = this.baseLocator.locator('.modal-body');
