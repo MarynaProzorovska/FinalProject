@@ -22,7 +22,8 @@ const addressesInfo = {
   addressComplement: 'Test info',
 };
 
-// test
+// test lkjhgf
+// lkjhgfdsdfghj
 test(
   'Buying a product check',
   { tag: '@FinalProject011' },
