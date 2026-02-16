@@ -6,6 +6,8 @@ test.beforeEach(async ({ headerElements, productPage }) => {
   await expect(productPage.locators.clothesTitle).toBeVisible();
 });
 
+////////////test
+
 test.describe('Verify filters on different pages', () => {
   test('Filters on clothes page', { tag: '@FinalProject03' }, async function async({ filters }) {
     await test.step('Filter by Woman-Category', async function () {
