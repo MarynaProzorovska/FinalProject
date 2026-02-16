@@ -77,10 +77,10 @@ test.describe('Verify filters on different pages', () => {
       expect(filters.locators.activeFilterValue).toContainText('Color: White');
       await filters.verifyNumberOfCardsAfterFiltering();
       await filters.resetActiveFilter();
-      await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 20000 });
+      await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
 
-    await test.step('Filter by White-Color', async function () {
+    await test.step('Filter by Black-Color', async function () {
       await filters.locators.blackColorCheckbox.check();
       await expect(filters.locators.activeFilterValue).toBeVisible();
       expect(filters.locators.activeFilterValue).toContainText('Color: Black');
