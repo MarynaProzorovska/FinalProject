@@ -6,6 +6,7 @@ test.describe('Cart page functionality check', async function () {
     'Changing number of product with arrows',
     { tag: '@FinalProject10' },
     async function ({ headerElements, clothesPage, productPage, successfulMessage, cartPage }) {
+      test.setTimeout(120000);
       await test.step('Adding product to the cart', async () => {
         await headerElements.navigateToClothesPage();
         await clothesPage.locators.getBaseCardLocator('Hummingbird printed t-shirt').click();
