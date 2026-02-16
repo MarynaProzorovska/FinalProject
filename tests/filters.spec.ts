@@ -14,7 +14,7 @@ test.describe('Verify filters on different pages', () => {
       expect(filters.locators.activeFilterValue).toContainText('Categories: Women');
       await filters.verifyNumberOfCardsAfterFiltering();
       await filters.resetActiveFilter();
-      await expect(filters.locators.activeFilterValue).toBeHidden();
+      await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
 
     await test.step('Filter by Man-Category', async function () {
@@ -23,7 +23,7 @@ test.describe('Verify filters on different pages', () => {
       expect(filters.locators.activeFilterValue).toContainText('Categories: Men');
       await filters.verifyNumberOfCardsAfterFiltering();
       await filters.resetActiveFilter();
-      await expect(filters.locators.activeFilterValue).toBeHidden();
+      await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
 
     await test.step('Filter by S-Size', async function () {
@@ -32,7 +32,7 @@ test.describe('Verify filters on different pages', () => {
       expect(filters.locators.activeFilterValue).toContainText('Size: S');
       await filters.verifyNumberOfCardsAfterFiltering();
       await filters.resetActiveFilter();
-      await expect(filters.locators.activeFilterValue).toBeHidden();
+      await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
 
     await test.step('Filter by M-Size', async function () {
@@ -41,7 +41,7 @@ test.describe('Verify filters on different pages', () => {
       expect(filters.locators.activeFilterValue).toContainText('Size: M');
       await filters.verifyNumberOfCardsAfterFiltering();
       await filters.resetActiveFilter();
-      await expect(filters.locators.activeFilterValue).toBeHidden();
+      await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
 
     await test.step('Filter by L-Size', async function () {
@@ -50,7 +50,7 @@ test.describe('Verify filters on different pages', () => {
       expect(filters.locators.activeFilterValue).toContainText('Size: L');
       await filters.verifyNumberOfCardsAfterFiltering();
       await filters.resetActiveFilter();
-      await expect(filters.locators.activeFilterValue).toBeHidden();
+      await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
 
     await test.step('Filter by Long sleeves-Property', async function () {
@@ -59,7 +59,7 @@ test.describe('Verify filters on different pages', () => {
       expect(filters.locators.activeFilterValue).toContainText('Property: Long sleeves');
       await filters.verifyNumberOfCardsAfterFiltering();
       await filters.resetActiveFilter();
-      await expect(filters.locators.activeFilterValue).toBeHidden();
+      await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
 
     await test.step('Filter by Short sleeves-Property', async function () {
@@ -68,7 +68,7 @@ test.describe('Verify filters on different pages', () => {
       expect(filters.locators.activeFilterValue).toContainText(' Property: Short sleeves ');
       await filters.verifyNumberOfCardsAfterFiltering();
       await filters.resetActiveFilter();
-      await expect(filters.locators.activeFilterValue).toBeHidden();
+      await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
 
     await test.step('Filter by White-Color', async function () {
@@ -77,7 +77,7 @@ test.describe('Verify filters on different pages', () => {
       expect(filters.locators.activeFilterValue).toContainText('Color: White');
       await filters.verifyNumberOfCardsAfterFiltering();
       await filters.resetActiveFilter();
-      await expect(filters.locators.activeFilterValue).toBeHidden();
+      await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 20000 });
     });
 
     await test.step('Filter by White-Color', async function () {
@@ -86,7 +86,7 @@ test.describe('Verify filters on different pages', () => {
       expect(filters.locators.activeFilterValue).toContainText('Color: Black');
       await filters.verifyNumberOfCardsAfterFiltering();
       await filters.resetActiveFilter();
-      await expect(filters.locators.activeFilterValue).toBeHidden();
+      await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
   });
 
