@@ -65,7 +65,7 @@ test.describe('Verify filters on different pages', () => {
     await test.step('Filter by Short sleeves-Property', async function () {
       await filters.locators.shortSleeveCheckbox.check();
       await expect(filters.locators.activeFilterValue).toBeVisible();
-      expect(filters.locators.activeFilterValue).toContainText('Property: Short sleeves');
+      expect(filters.locators.activeFilterValue).toContainText(' Property: Short sleeves ');
       await filters.verifyNumberOfCardsAfterFiltering();
       await filters.resetActiveFilter();
       await expect(filters.locators.activeFilterValue).toBeHidden();

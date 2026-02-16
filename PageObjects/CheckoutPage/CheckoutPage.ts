@@ -54,7 +54,6 @@ export class CheckoutPage extends BasePage {
     await this.locators.cityInput.fill(city);
 
     await this.locators.stateInput.selectOption(state);
-    // await this.page.keyboard.press('enter');
 
     await this.locators.ZipInput.fill(ZipCode);
 
