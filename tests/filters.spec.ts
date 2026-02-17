@@ -13,7 +13,7 @@ test.describe('Verify filters on different pages', () => {
       await filters.locators.womenCategoryCheckbox.check();
       await expect(filters.locators.activeFilterValue).toBeVisible();
       expect(filters.locators.activeFilterValue).toContainText('Categories: Women');
-      await filters.verifyNumberOfCardsAfterFiltering();
+      await filters.verifyNumberOfCardsAfterFilteringUI();
       await filters.resetActiveFilter();
       await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
@@ -22,7 +22,7 @@ test.describe('Verify filters on different pages', () => {
       await filters.locators.menCategoryCheckbox.check();
       await expect(filters.locators.activeFilterValue).toBeVisible();
       expect(filters.locators.activeFilterValue).toContainText('Categories: Men');
-      await filters.verifyNumberOfCardsAfterFiltering();
+      await filters.verifyNumberOfCardsAfterFilteringUI();
       await filters.resetActiveFilter();
       await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
@@ -31,7 +31,7 @@ test.describe('Verify filters on different pages', () => {
       await filters.locators.sSizeCheckbox.check();
       await expect(filters.locators.activeFilterValue).toBeVisible();
       expect(filters.locators.activeFilterValue).toContainText('Size: S');
-      await filters.verifyNumberOfCardsAfterFiltering();
+      await filters.verifyNumberOfCardsAfterFilteringUI();
       await filters.resetActiveFilter();
       await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
@@ -40,7 +40,7 @@ test.describe('Verify filters on different pages', () => {
       await filters.locators.mSizeCheckbox.check();
       await expect(filters.locators.activeFilterValue).toBeVisible();
       expect(filters.locators.activeFilterValue).toContainText('Size: M');
-      await filters.verifyNumberOfCardsAfterFiltering();
+      await filters.verifyNumberOfCardsAfterFilteringUI();
       await filters.resetActiveFilter();
       await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
@@ -49,7 +49,7 @@ test.describe('Verify filters on different pages', () => {
       await filters.locators.lSizeCheckbox.check();
       await expect(filters.locators.activeFilterValue).toBeVisible();
       expect(filters.locators.activeFilterValue).toContainText('Size: L');
-      await filters.verifyNumberOfCardsAfterFiltering();
+      await filters.verifyNumberOfCardsAfterFilteringUI();
       await filters.resetActiveFilter();
       await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
@@ -58,7 +58,7 @@ test.describe('Verify filters on different pages', () => {
       await filters.locators.longSleeveCheckbox.check();
       await expect(filters.locators.activeFilterValue).toBeVisible();
       expect(filters.locators.activeFilterValue).toContainText('Property: Long sleeves');
-      await filters.verifyNumberOfCardsAfterFiltering();
+      await filters.verifyNumberOfCardsAfterFilteringUI();
       await filters.resetActiveFilter();
       await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
@@ -67,7 +67,7 @@ test.describe('Verify filters on different pages', () => {
       await filters.locators.shortSleeveCheckbox.check();
       await expect(filters.locators.activeFilterValue).toBeVisible();
       expect(filters.locators.activeFilterValue).toContainText(' Property: Short sleeves ');
-      await filters.verifyNumberOfCardsAfterFiltering();
+      await filters.verifyNumberOfCardsAfterFilteringUI();
       await filters.resetActiveFilter();
       await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
@@ -76,7 +76,7 @@ test.describe('Verify filters on different pages', () => {
       await filters.locators.whiteColorCheckbox.check();
       await expect(filters.locators.activeFilterValue).toBeVisible();
       expect(filters.locators.activeFilterValue).toContainText('Color: White');
-      await filters.verifyNumberOfCardsAfterFiltering();
+      await filters.verifyNumberOfCardsAfterFilteringUI();
       await filters.resetActiveFilter();
       await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 20000 });
     });
@@ -85,7 +85,7 @@ test.describe('Verify filters on different pages', () => {
       await filters.locators.blackColorCheckbox.check();
       await expect(filters.locators.activeFilterValue).toBeVisible();
       expect(filters.locators.activeFilterValue).toContainText('Color: Black');
-      await filters.verifyNumberOfCardsAfterFiltering();
+      await filters.verifyNumberOfCardsAfterFilteringUI();
       await filters.resetActiveFilter();
       await expect(filters.locators.activeFilterValue).toBeHidden({ timeout: 50000 });
     });
@@ -99,7 +99,7 @@ test.describe('Verify filters on different pages', () => {
     });
 
     await test.step('Reset all filters', async function () {
-      await filters.locators.clearAll.click();
+      await filters.verifyNumberOfCardsAfterResetFiltersNetwork();
       await expect(filters.locators.sSizeCheckbox).not.toBeChecked();
       await expect(filters.locators.mSizeCheckbox).not.toBeChecked();
       await expect(filters.locators.lSizeCheckbox).not.toBeChecked();
